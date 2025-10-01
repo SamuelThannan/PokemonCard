@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PokemonCard"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
-    <Grid Margin="20" Background="Beige">
+    <Grid Margin="20" Background="DarkOrange">
         
         
         <!-- Rows for card sections -->
@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/> <!--MOVE 1-->
             <RowDefinition Height="*"/> <!-- MOVE 2-->
             <RowDefinition Height="Auto"/> <!-- WEAK/RESIST/RETREAT -->
-            <RowDefinition Height="Auto"/> <!-- FOOTER-->
+            <RowDefinition Height="25"/> <!-- FOOTER-->
         </Grid.RowDefinitions>
         
         <!-- Columns -->
@@ -26,41 +26,157 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+
+            <!-- HEADER ROW 0-->
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> <!-- Name -->
+                <ColumnDefinition Width="*"/> <!-- Space -->
+                <ColumnDefinition Width="Auto"/> <!-- HP -->
+            </Grid.ColumnDefinitions>
+            
+
+            <!-- Name -->
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0" Margin="2" Padding="5">
+                <TextBlock Text="Arcanine" FontWeight="Bold" FontFamily="Bahnschrift Condensed" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+            </Border>
+
+            <!-- Empty Space -->
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0" Margin="2" Padding="2">
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <!-- HP -->
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0" Margin="2" Padding="5">
+                <TextBlock Text="HP 150" FontWeight="Bold" FontSize="25" FontFamily="Bahnschrift Condensed" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+        </Grid>
         
-        <!-- HEADER -->
-        <Border Grid.Row="0" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="HEADER" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- IMAGE ROW 1-->
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Margin="6" BorderBrush="Black" BorderThickness="1" Background="LightGray">
+            <Rectangle Width="220" Height="220" Fill="DarkGray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
         
-        <!-- PICTURE AREA-->
-        <Border Grid.Row="1" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <Rectangle Width="200" Height="200" Fill="DarkGray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Border>
-        
-        <!-- SUB INFO -->
-        <Border Grid.Row="2" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="SUB-INFO" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Border>
-        
-        <!-- MOVE 1 -->
-        <Border Grid.Row="3" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="MOVE 1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Border>
-        
-        <!-- MOVE 2 -->
-        <Border Grid.Row="4" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="MOVE 2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Border>
-        
-        <!-- WEAK/RESIST/RETREAT -->
-        <Border Grid.Row="5" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="WEAK / RESIST / RETREAT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Border>
-        
-        <!-- FOOTER-->
-        <Border Grid.Row="6" Grid.ColumnSpan="3" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="FOOTER" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- Evolve text window -->
+        <Border Grid.Row="1" Margin="6" >
+            <Rectangle Width="140" Height="20" Margin="1"  Fill="Silver" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" StrokeThickness="2" RadiusX="5" RadiusY="5"/>
         </Border>
 
+        <Border Grid.Row="1" Margin="6">
+            <TextBlock Text="Evolves from Growlithe" Margin="4" FontFamily="Sitka Subheading Semibold"/>
+        </Border>
+
+        <!-- SUB INFO ROW 2 -->
+        <Border Grid.Row="2" Grid.ColumnSpan="3" Margin="6" BorderBrush="Black" BorderThickness="1" >
+            <TextBlock Text="No.0059 Legendary Pokémon HT:6'3' WT: 341.7 lbs." FontSize="10" TextAlignment="Center" />
+        </Border>
+        
+        <!-- Attack 1 ROW 3-->
+        <Grid Grid.Row="3" Grid.ColumnSpan="3" Margin="4,30,4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/> <!-- Attack Header -->
+                <RowDefinition Height="Auto"/> <!-- Attack Description -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> <!-- ICON -->
+                <ColumnDefinition Width="*"/> <!-- NAME -->
+                <ColumnDefinition Width="Auto"/> <!-- DAMAGE -->
+            </Grid.ColumnDefinitions>
+
+            <!-- HEADER ROW -->
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="5,0">
+                <TextBlock Text="X" FontWeight="ExtraBold"/>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0"  Margin="0">
+                <TextBlock Text="Torrid Torrent" FontSize="20" FontFamily="Bahnschrift Condensed"  TextAlignment="Center" FontWeight="Bold"/>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0"  Margin="5,0">
+                <TextBlock Text="30" FontSize="20" FontWeight="ExtraBold" FontFamily="Bahnschrift Condensed"/>
+            </Border>
+            
+            <!-- DESCRIPTION ROW -->
+            <Border Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="8,0">
+                <TextBlock Text="Attach up to 2 Basic Energy cards from your discard pike to this Pokémon." TextWrapping="Wrap"/>
+            </Border>
+            
+        </Grid>
+
+        <!-- Attack 2 ROW 4-->
+        <Grid Grid.Row="4" Grid.ColumnSpan="3" Margin="4,0,4,30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- HEADER ROW -->
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="5,0">
+                <TextBlock Text="XXXX" FontWeight="ExtraBold"/>
+            </Border>
+            
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0"  Margin="5,0">
+                <TextBlock Text="Dynamite Fang" FontSize="20" FontWeight="Bold" FontFamily="Bahnschrift Condensed" TextAlignment="Center"/>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0" Margin="5,0">
+                <TextBlock Text="240" FontSize="20" FontWeight="ExtraBold" FontFamily="Bahnschrift Condensed"/>
+            </Border>
+
+            <!-- DESCRIPTION ROW -->
+            <Border Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="8,0">
+                <TextBlock Text="Discard 2X Energy from this Pokémon." TextWrapping="Wrap"/>
+            </Border>
+            
+        </Grid>
+
+        <!-- WEAK / RESIST / RETREAT -->
+        <Grid Grid.Row="5" Grid.ColumnSpan="3" Margin="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="2"  Margin="2">
+                <TextBlock Text=" weakness Xx2" FontFamily="Arial Black" />
+            </Border>
+            
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2"  Margin="2">
+                <TextBlock Text=" resistance" FontFamily="Arial Black"/>
+            </Border>
+
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="2"  Margin="2">
+                <TextBlock Text=" retreat XXXX" FontFamily="Arial Black"/>
+            </Border>
+        </Grid>
+        
+        <!-- FOOTER -->
+        <Grid Grid.Row="6" Grid.ColumnSpan="3" Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="1,0">
+                <TextBlock Text="Illlus. Atsushi Furusawa" FontWeight="Bold" FontSize="8"/>
+            </Border>
+           
+
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0"  Margin="1">
+                <TextBlock Text="059/165" FontWeight="Bold" FontSize="8" HorizontalAlignment="Right" VerticalAlignment="bottom"/>
+            </Border>
+
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0"  Margin="2">
+                <TextBlock Text="An ancient picture scroll shows that people were captivated by its movememnt as it ran through prairies." FontSize="7" TextWrapping="Wrap" FontFamily="Bahnschrift"/>
+            </Border>
+        </Grid>
+        
     </Grid>
 </Window>
